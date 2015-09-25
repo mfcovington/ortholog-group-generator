@@ -26,3 +26,9 @@ ATTRIBUTES:
 ## Output
 
 Output saved as tab-delimited file: `data/gramene-orthologs.txt`
+
+Make version without '% identity' columns:
+
+```sh
+cut -f1,2,4,6 data/gramene-orthologs.txt > data/gramene-orthologs.ids-only.txt
+```
