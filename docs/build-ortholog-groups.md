@@ -13,6 +13,9 @@
     - [Calculate Ortholog Group Membership Frequencies](#calculate-ortholog-group-membership-frequencies-1)
     - [Build Ortholog Groups for Genes Without *A. thaliana* Orthologs](#build-ortholog-groups-for-genes-without-a-thaliana-orthologs)
         - [Identify *M. truncatula* Genes Without an *A. thaliana* Ortholog](#identify-m-truncatula-genes-without-an-a-thaliana-ortholog)
+        - [Get orthologous relationships between *M. truncatula* and each of *O. sativa* and *S. lycopersicum*](#get-orthologous-relationships-between-m-truncatula-and-each-of-o-sativa-and-s-lycopersicum)
+            - [Parameters](#parameters)
+            - [Output](#output)
 
 <!-- /MarkdownTOC -->
 
@@ -202,4 +205,43 @@ Plan:
 ```sh
 SPECIES=Mt
 comm -13 <(cut -f1 $RESULTS_DIR/$SPECIES.txt | sort -u) <(grep -v 'Gene stable ID' $DATA_DIR/$SPECIES.all-genes.txt | sort) > $SPECIES.no-ortholog.txt
+```
+
+
+#### Get orthologous relationships between *M. truncatula* and each of *O. sativa* and *S. lycopersicum*
+
+##### Parameters
+
+DATABASE: 'PLANT GENES 49'
+
+DATASET: 'Medicago truncatula str. A17 genes (MedtrA17_4.0 (2014-06-EnsemblPlants))'
+
+ATTRIBUTES:
+
+- [x] Homologs
+- Filters
+  - [x] ID list limit
+    - Gene Stable ID(s) using `Mt.no-ortholog.txt`
+- Gene
+  - Gene Attributes
+    - [x] Gene stable ID
+- Orthologs
+  - Oryza sativa Japonica Orthologs
+    - [x] Oryza sativa Japonica gene stable ID
+    - [x] Oryza sativa Japonica % identity
+  - Solanum lycopersicum str. Heinz 1706 Orthologs
+    - [x] Solanum lycopersicum str. Heinz 1706 gene stable ID
+    - [x] Solanum lycopersicum str. Heinz 1706 % identity
+
+Count: `29754 / 54073 Genes`
+
+
+##### Output
+
+Output saved as tab-delimited file: `data/v49/mt-orthologs.txt`
+
+Make version without '% identity' columns:
+
+```sh
+cut -f1,2,4 $DATA_DIR/Mt-orthologs.txt > $DATA_DIR/Mt-orthologs.ids-only.txt
 ```
