@@ -1,5 +1,12 @@
 # Build Ortholog Groups
 
+<!-- MarkdownTOC -->
+
+- [Ortholog Groups for Gramene v46](#ortholog-groups-for-gramene-v46)
+
+<!-- /MarkdownTOC -->
+
+
 ## Ortholog Groups for Gramene v46
 
 ```sh

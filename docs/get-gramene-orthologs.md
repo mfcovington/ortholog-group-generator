@@ -1,5 +1,18 @@
 # Download Orthologous Relationships and Gene Lists from [Gramene](http://ensembl.gramene.org/biomart/martview)
 
+<!-- MarkdownTOC -->
+
+- [Gramene v46](#gramene-v46)
+  - [Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-orthologous-relationships-between-a-thaliana-and-each-of-m-truncatula-o-sativa-and-s-lycopersicum)
+    - [Parameters](#parameters)
+    - [Output](#output)
+  - [Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-gene-lists-for-m-truncatula-o-sativa-and-s-lycopersicum)
+    - [Parameters](#parameters-1)
+    - [Output](#output-1)
+
+<!-- /MarkdownTOC -->
+
+
 ## Gramene v46
 
 ### Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*
