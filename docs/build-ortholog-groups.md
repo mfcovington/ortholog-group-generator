@@ -16,6 +16,7 @@
         - [Get orthologous relationships between *M. truncatula* and each of *O. sativa* and *S. lycopersicum*](#get-orthologous-relationships-between-m-truncatula-and-each-of-o-sativa-and-s-lycopersicum)
             - [Parameters](#parameters)
             - [Output](#output)
+        - [Duplicate first column of *M. trunculata* orthologs](#duplicate-first-column-of-m-trunculata-orthologs)
 
 <!-- /MarkdownTOC -->
 
@@ -244,4 +245,13 @@ Make version without '% identity' columns:
 
 ```sh
 cut -f1,2,4 $DATA_DIR/Mt-orthologs.txt > $DATA_DIR/Mt-orthologs.ids-only.txt
+```
+
+
+#### Duplicate first column of *M. trunculata* orthologs
+
+Need the *M. truncatula* ID column to be duplicated so that the ortholog group creation script will work properly. (Previously, the first column was *A. thaliana* IDs and was just used in the assembly and labeling of ortholog groups.)
+
+```sh
+perl -pi'.orig' -e '@cells = split /\t/; $_ = join "\t", $cells[0], @cells;' $DATA_DIR/Mt-orthologs.ids-only.txt
 ```
