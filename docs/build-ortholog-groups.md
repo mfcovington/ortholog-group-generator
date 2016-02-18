@@ -11,6 +11,8 @@
     - [Create Ortholog Groups](#create-ortholog-groups-1)
     - [Remove Putative Non-genes from Gene Lists](#remove-putative-non-genes-from-gene-lists)
     - [Calculate Ortholog Group Membership Frequencies](#calculate-ortholog-group-membership-frequencies-1)
+    - [Build Ortholog Groups for Genes Without *A. thaliana* Orthologs](#build-ortholog-groups-for-genes-without-a-thaliana-orthologs)
+        - [Identify *M. truncatula* Genes Without an *A. thaliana* Ortholog](#identify-m-truncatula-genes-without-an-a-thaliana-ortholog)
 
 <!-- /MarkdownTOC -->
 
@@ -176,3 +178,28 @@ done
         2   402,
         3   15
     }
+
+
+### Build Ortholog Groups for Genes Without *A. thaliana* Orthologs
+
+Plan:
+
+- *M. truncatula*-based ortholog groups
+
+    - Identify *M. truncatula* genes w/o an *A. thaliana* ortholog (i.e., not currently in an ortholog group)
+    - Get orthologous relationships between *M. truncatula* and each of *O. sativa* and *S. lycopersicum*
+    - Build ortholog groups for the subset of *M. truncatula* genes not belonging to an ortholog group
+
+- *O. sativa*-based ortholog groups
+
+    - Identify *O. sativa* genes w/o an *A. thaliana*/*M. truncatula* ortholog (i.e., not currently in an ortholog group)
+    - Get orthologous relationships between *O. sativa* and *S. lycopersicum*
+    - Build ortholog groups for the subset of *O. sativa* genes not belonging to an ortholog group
+
+
+#### Identify *M. truncatula* Genes Without an *A. thaliana* Ortholog
+
+```sh
+SPECIES=Mt
+comm -13 <(cut -f1 $RESULTS_DIR/$SPECIES.txt | sort -u) <(grep -v 'Gene stable ID' $DATA_DIR/$SPECIES.all-genes.txt | sort) > $SPECIES.no-ortholog.txt
+```
