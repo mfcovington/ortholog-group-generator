@@ -3,19 +3,19 @@
 <!-- MarkdownTOC -->
 
 - [Gramene v46](#gramene-v46)
-  - [Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-orthologous-relationships-between-a-thaliana-and-each-of-m-truncatula-o-sativa-and-s-lycopersicum)
-    - [Parameters](#parameters)
-    - [Output](#output)
-  - [Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-gene-lists-for-m-truncatula-o-sativa-and-s-lycopersicum)
-    - [Parameters](#parameters-1)
-    - [Output](#output-1)
+    - [Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-orthologous-relationships-between-a-thaliana-and-each-of-m-truncatula-o-sativa-and-s-lycopersicum)
+        - [Parameters](#parameters)
+        - [Output](#output)
+    - [Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-gene-lists-for-m-truncatula-o-sativa-and-s-lycopersicum)
+        - [Parameters](#parameters-1)
+        - [Output](#output-1)
 - [Gramene v49](#gramene-v49)
-  - [Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-orthologous-relationships-between-a-thaliana-and-each-of-m-truncatula-o-sativa-and-s-lycopersicum-1)
-    - [Parameters](#parameters-2)
-    - [Output](#output-2)
-  - [Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-gene-lists-for-m-truncatula-o-sativa-and-s-lycopersicum-1)
-    - [Parameters](#parameters-3)
-    - [Output](#output-3)
+    - [Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-orthologous-relationships-between-a-thaliana-and-each-of-m-truncatula-o-sativa-and-s-lycopersicum-1)
+        - [Parameters](#parameters-2)
+        - [Output](#output-2)
+    - [Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*](#get-gene-lists-for-m-truncatula-o-sativa-and-s-lycopersicum-1)
+        - [Parameters](#parameters-3)
+        - [Output](#output-3)
 
 <!-- /MarkdownTOC -->
 

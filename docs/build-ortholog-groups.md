@@ -51,29 +51,29 @@ done
 
 
 >     Mt:
-     {
-         0   28613,
-         1   22809,
-         2   95,
-         3   2
-     }
-     Os:
-     {
-         0   20227,
-         1   14574,
-         2   2546,
-         3   393,
-         4   66,
-         5   24
-     }
-     Sl:
-     {
-         0   14688,
-         1   18890,
-         2   427,
-         3   14,
-         4   4
-     }
+    {
+        0   28613,
+        1   22809,
+        2   95,
+        3   2
+    }
+    Os:
+    {
+        0   20227,
+        1   14574,
+        2   2546,
+        3   393,
+        4   66,
+        5   24
+    }
+    Sl:
+    {
+        0   14688,
+        1   18890,
+        2   427,
+        3   14,
+        4   4
+    }
 
 
 ## Gramene v49
@@ -84,7 +84,7 @@ done
 BASE_DIR=~/git.repos/orthologs
 BIN_DIR=$BASE_DIR/bin
 DATA_DIR=$BASE_DIR/data/v49
-RESULTS_DIR=$BASE_DIR/results/v49/
+RESULTS_DIR=$BASE_DIR/results/v49
 SPECIES_LIST=(Mt Os Sl)
 
 mkdir -p $RESULTS_DIR
