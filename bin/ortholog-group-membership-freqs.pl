@@ -18,6 +18,10 @@ my $all_genes_file = "$data_dir/$species.all-genes.txt";
 my $ortho_file = "$results_dir/$species.txt";
 
 open my $all_genes_fh, "<", $all_genes_file;
+my $header = <$all_genes_fh>;
+chomp $header;
+warn "No header! Got '$header', but expected 'Gene stable ID'.\n"
+    unless $header eq "Gene stable ID";
 while ( my $gene = <$all_genes_fh> ) {
     chomp $gene;
     $counts{$gene} = 0;
