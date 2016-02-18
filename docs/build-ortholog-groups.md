@@ -10,6 +10,7 @@
     - [Set Parameters](#set-parameters-1)
     - [Create Ortholog Groups](#create-ortholog-groups-1)
     - [Remove Putative Non-genes from Gene Lists](#remove-putative-non-genes-from-gene-lists)
+    - [Calculate Ortholog Group Membership Frequencies](#calculate-ortholog-group-membership-frequencies-1)
 
 <!-- /MarkdownTOC -->
 
@@ -140,3 +141,38 @@ for SPECIES in ${SPECIES_LIST[*]}; do
     grep -v -e EPl -e NCRNA -e RRNA $DATA_DIR/$SPECIES.all-genes.original.txt > $DATA_DIR/$SPECIES.all-genes.txt
 done
 ```
+
+
+### Calculate Ortholog Group Membership Frequencies
+
+```sh
+for SPECIES in ${SPECIES_LIST[*]}; do
+    echo $SPECIES:
+    $BIN_DIR/ortholog-group-membership-freqs.pl $SPECIES $DATA_DIR $RESULTS_DIR
+done
+```
+
+
+>     Mt:
+    {
+        0   29755,
+        1   21714,
+        2   51
+    }
+    Os:
+    {
+        0   19933,
+        1   14730,
+        2   2591,
+        3   430,
+        4   74,
+        5   38,
+        6   35
+    }
+    Sl:
+    {
+        0   16426,
+        1   17952,
+        2   402,
+        3   15
+    }
