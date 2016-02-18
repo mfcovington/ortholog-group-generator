@@ -126,7 +126,7 @@ sub write_ortho_groups_per_genotype {
 
     for my $genotype (@ortho_genotypes) {
         open my $group_fh, ">", "$genotype.txt";
-        for my $group_id ( keys %$ortho_groups ) {
+        for my $group_id ( sort keys %$ortho_groups ) {
 
             if ( exists $$ortho_groups{$group_id}{$genotype} ) {
                 for my $gene ( @{ $$ortho_groups{$group_id}{$genotype} } ) {
