@@ -1,8 +1,10 @@
-# Download orthologous relationships from [Gramene](http://ensembl.gramene.org/biomart/martview)
+# Download Orthologous Relationships and Gene Lists from [Gramene](http://ensembl.gramene.org/biomart/martview)
 
 ## Gramene v46
 
-### Parameters
+### Get Orthologous Relationships between *A. thaliana* and each of *M. truncatula*, *O. sativa*, and *S. lycopersicum*
+
+#### Parameters
 
 DATABASE: 'PLANT GENES 46'
 
@@ -25,7 +27,8 @@ ATTRIBUTES:
     - (x) Solanum lycopersicum str. Heinz 1706 gene stable ID
     - (x) Solanum lycopersicum str. Heinz 1706 % identity
 
-### Output
+
+#### Output
 
 Output saved as tab-delimited file: `data/v46/gramene-orthologs.txt`
 
@@ -34,3 +37,32 @@ Make version without '% identity' columns:
 ```sh
 cut -f1,2,4,6 data/v46/gramene-orthologs.txt > data/v46/gramene-orthologs.ids-only.txt
 ```
+
+
+### Get Gene Lists for *M. truncatula*, *O. sativa*, and *S. lycopersicum*
+
+#### Parameters
+
+DATABASE: 'PLANT GENES 46'
+
+DATASETS:
+
+- 'Medicago truncatula str. A17 genes (MedtrA17_4.0 (2014-06-EnsemblPlants))'
+- 'Oryza sativa Japonica genes (IRGSP-1.0 (IRGSP-1.0))'
+- 'Solanum lycopersicum str. Heinz 1706 genes (SL2.50 (2014-10-EnsemblPlants))'
+
+ATTRIBUTES:
+
+- (x) Features
+- Gene
+  - Gene Attributes
+    - (x) Gene stable ID
+
+
+#### Output
+
+Outputs saved as tab-delimited files:
+
+- `data/v46/Mt.all-genes.txt`
+- `data/v46/Os.all-genes.txt`
+- `data/v46/Sl.all-genes.txt`
