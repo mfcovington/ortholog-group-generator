@@ -1,6 +1,8 @@
 # Download orthologous relationships from [Gramene](http://ensembl.gramene.org/biomart/martview)
 
-## Parameters
+## Gramene v46
+
+### Parameters
 
 DATABASE: 'PLANT GENES 46'
 
@@ -23,12 +25,12 @@ ATTRIBUTES:
     - (x) Solanum lycopersicum str. Heinz 1706 gene stable ID
     - (x) Solanum lycopersicum str. Heinz 1706 % identity
 
-## Output
+### Output
 
-Output saved as tab-delimited file: `data/gramene-orthologs.txt`
+Output saved as tab-delimited file: `data/v46/gramene-orthologs.txt`
 
 Make version without '% identity' columns:
 
 ```sh
-cut -f1,2,4,6 data/gramene-orthologs.txt > data/gramene-orthologs.ids-only.txt
+cut -f1,2,4,6 data/v46/gramene-orthologs.txt > data/v46/gramene-orthologs.ids-only.txt
 ```
