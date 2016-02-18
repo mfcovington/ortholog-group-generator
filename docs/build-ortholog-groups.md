@@ -6,6 +6,9 @@
     - [Set Parameters](#set-parameters)
     - [Create Ortholog Groups](#create-ortholog-groups)
     - [Calculate Ortholog Group Membership Frequencies](#calculate-ortholog-group-membership-frequencies)
+- [Gramene v49](#gramene-v49)
+    - [Set Parameters](#set-parameters-1)
+    - [Create Ortholog Groups](#create-ortholog-groups-1)
 
 <!-- /MarkdownTOC -->
 
@@ -20,6 +23,7 @@ BIN_DIR=$BASE_DIR/bin
 DATA_DIR=$BASE_DIR/data/v46
 RESULTS_DIR=$BASE_DIR/results/v46/2015-09-24/
 SPECIES_LIST=(Mt Os Sl)
+
 mkdir -p $RESULTS_DIR
 ```
 
@@ -68,3 +72,28 @@ done
          3   14,
          4   4
      }
+
+
+## Gramene v49
+
+### Set Parameters
+
+```sh
+BASE_DIR=~/git.repos/orthologs
+BIN_DIR=$BASE_DIR/bin
+DATA_DIR=$BASE_DIR/data/v49
+RESULTS_DIR=$BASE_DIR/results/v49/
+SPECIES_LIST=(Mt Os Sl)
+
+mkdir -p $RESULTS_DIR
+```
+
+
+### Create Ortholog Groups
+
+```sh
+cd $RESULTS_DIR
+$BIN_DIR/create-orthologous-groups.pl \
+  $DATA_DIR/gramene-orthologs.ids-only.txt At ${SPECIES_LIST[*]}
+# Takes 9.9 minutes on my laptop
+```
