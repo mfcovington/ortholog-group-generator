@@ -22,8 +22,7 @@ my $orthologs
 my $ortho_groups = consolidate_orthologous_groups($orthologs);
 write_ortho_group_ids( $ortho_groups, $id_file );
 write_ortho_groups( $ortho_groups, $group_file, \@ortho_genotypes );
-write_ortho_groups_per_genotype( $ortho_groups, $group_file,
-    \@ortho_genotypes );
+write_ortho_groups_per_genotype( $ortho_groups, \@ortho_genotypes );
 exit;
 
 
@@ -127,7 +126,7 @@ sub write_ortho_group_ids {
 sub write_ortho_groups_per_genotype {
     my ( $ortho_groups, $ortho_genotypes ) = @_;
 
-    for my $genotype (@ortho_genotypes) {
+    for my $genotype (@$ortho_genotypes) {
         open my $group_fh, ">", "$genotype.txt";
         for my $group_id ( sort keys %$ortho_groups ) {
 
