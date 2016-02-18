@@ -8,7 +8,7 @@ use strict;
 use warnings;
 use autodie;
 use feature 'say';
-use Data::Compare;
+use JSON::XS;
 use List::MoreUtils qw(uniq);
 
 
@@ -32,7 +32,9 @@ sub consolidate_orthologous_groups {
     my %ortho_groups;
     my %paralogs;
 
-    my %used_genes;
+    my %matched_genes;
+    my $json = JSON::XS->new;
+    $json->canonical(1);
 
     my $count = 0;
 
@@ -41,17 +43,18 @@ sub consolidate_orthologous_groups {
     say scalar @base_gene_list;
     my $time = localtime;
     say "Started at $time";
-    for my $gene_1 (@base_gene_list) {
-        next if exists $used_genes{$gene_1};
-        $used_genes{$gene_1}++;
+    while ( my $gene_1 = shift @base_gene_list ) {
+        next if exists $matched_genes{$gene_1};
         $paralogs{$gene_1} = [];
 
         for my $gene_2 (@base_gene_list) {
-            next if exists $used_genes{$gene_2};
+            next if exists $matched_genes{$gene_2};
 
-            if ( Compare( $$orthologs{$gene_1}, $$orthologs{$gene_2} ) ) {
+            if ( $json->encode( $$orthologs{$gene_1} ) eq
+                 $json->encode( $$orthologs{$gene_2} ) )
+            {
                 push @{ $paralogs{$gene_1} }, $gene_2;
-                $used_genes{$gene_2}++;
+                $matched_genes{$gene_2}++;
             }
         }
         $count++;
